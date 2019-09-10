@@ -40,4 +40,5 @@ git add README.md
 git commit -m "first commit"
 git remote add origin link_repo -> agregamos la ruta del repositorio
 git push -u origin master -> subimos nuestras cosas al repositorio
-
+git config --get remote.origin.url -> Con esto sabemos la url a donde apunta el remote origin
+ssh -T git@github.com -> Tener problemas con la conexino del repo en github

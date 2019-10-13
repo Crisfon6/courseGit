@@ -39,6 +39,15 @@ git init
 git add README.md 
 git commit -m "first commit"
 git remote add origin link_repo -> agregamos la ruta del repositorio
+git pull origin master -> Actualizamos nuestro repo local con el remote
 git push -u origin master -> subimos nuestras cosas al repositorio
 git config --get remote.origin.url -> Con esto sabemos la url a donde apunta el remote origin
 ssh -T git@github.com -> Tener problemas con la conexino del repo en github
+
+
+
+Es importante destacar que cuando recuperas (fetch) nuevas ramas remotas, no obtienes automáticamente una copia editable local de las mismas. En otras palabras, en este caso, no tienes una nueva rama serverfix. Sino que únicamente tienes un puntero no editable a origin/serverfix.
+
+Para integrar (merge) esto en tu actual rama de trabajo, puedes usar el comando git merge origin/serverfix. Y si quieres tener tu propia rama serverfix, donde puedas trabajar, puedes crearla directamente basaádote en rama remota:
+
+

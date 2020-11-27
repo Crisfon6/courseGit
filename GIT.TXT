@@ -12,12 +12,16 @@ git reflog -> con eso  vemos el historial asi hallamos utilizado reset --hard
 git reset --mixed id_commit -> va a un putno de nuestro 
 
 **RAMAS**
+git branch -d branch_name -> delete branch
 git branch nombre_dela_rama -> crea una nueva rama
 git log --oneline --decorate --all --graph -> muestra todo y las ramas que existen
 git checkout nombre_dela_rama -> se mueve a la rama mencionada
 git merge nombre_dela_rama -> esto conecta ramas se tiene que estar parado en la rama a la que quiere que se una nombre_dela_rama
 git branch -d nombre_dela_rama -> elimina la rama nombre_dela_rama
 git checkout -b nombre_dela_rama -> crea una nueva rama nombre_dela_rama y nos dirige a ella
+git reset --hard HEAD~1  -> vuelve al anterior commit
+git reset --soft HEAD~1  -> vuelve al anterior stage
+
 
 ***MERGE CON CONFLICTOS***
 cuando estamos modificando en la misma linea hemos modificado 

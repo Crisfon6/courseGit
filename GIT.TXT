@@ -11,6 +11,55 @@ git reset --hard id_commit -> devolvemos los archivos prsesentes en ese commit
 git reflog -> con eso  vemos el historial asi hallamos utilizado reset --hard
 git reset --mixed id_commit -> va a un putno de nuestro 
 
+
+*** AHORA USEMOS ESTO QUE VIMOS PARA EMPEZAR ***
+CASO : Digamos que has creado tu proyecto de desde cero, te paras en la ruta raiz de tu proyecto
+y abres una terminal en este sitio, lo primero que tienes que hacer es inicializar el 
+repositorio git con el siguiente comando:
+
+    git init 
+
+ahora necsitamos agregar todos nuestros archivos para que git lleve historial de estos entonces:
+
+    git add .
+
+esto agrega todo si no quieres agregar todo y solo quieres llevar unos pues:
+
+    git add <nombre del archivo que quieres agregar >
+
+bueno entonces ahora ya quieres guardar este punto en la historia hacemos un commit :
+
+    git commit -m "mensaje descriptivo del commit"
+
+listo en este punto ya estamos listo para pasar todo a la nube pero primero tenemos que agregar a donde enviarla:
+
+    git remote add <nombre que le quieras poner > <url del servicio qu estes usando (github,gitlab, etc..)>
+
+esto agrega la ruta dode subiremos y ahora si lo subimos:
+
+    git push <nombre que le pusiste en el paso anterior> -u
+
+y listo ahi ya tendrias tu repo en la nube actualizado por primera vez conn lo que tienes en local.
+
+
+CASO2 : digamos que ahora quieres colaborar en un repositorio, vamos a descargar todo el repo con :
+
+    git clone <url del repo>
+
+con esto lo obtenemos todo el repo en nuestra computadora nos movemos  a la nueva carpeta creada
+
+    cd <nombre de la carpeta>
+
+hacemos nuestras modificaciones y es hora de subirlo al repositorio
+
+    git add .
+    git commit -m "mensaje"
+    git push <nombre que le colocaste al remote> <nombre de la rama>
+
+
+
+
+
 **RAMAS**
 git branch -d branch_name -> delete branch
 git branch nombre_dela_rama -> crea una nueva rama
@@ -52,6 +101,6 @@ ssh -T git@github.com -> Tener problemas con la conexino del repo en github
 
 Es importante destacar que cuando recuperas (fetch) nuevas ramas remotas, no obtienes automáticamente una copia editable local de las mismas. En otras palabras, en este caso, no tienes una nueva rama serverfix. Sino que únicamente tienes un puntero no editable a origin/serverfix.
 
-Para integrar (merge) esto en tu actual rama de trabajo, puedes usar el comando git merge origin/serverfix. Y si quieres tener tu propia rama serverfix, donde puedas trabajar, puedes crearla directamente basaádote en rama remota:
+Para integrar (merge) esto en tu actual rama de trabajo, puedes usar el comando git merge origin/serverfix. Y si quieres tener tu propia rama serverfix, donde puedas trabajar, puedes crearla directamente basaádote en rama remota
 
 

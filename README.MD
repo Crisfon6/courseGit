@@ -1,19 +1,34 @@
+## Comandos basicos
 git init  ->inicializar un repositorio
+
 git status ->muestra los cambios realizados 
+
 git diff  -> podemos ver que ha sido modificado
+
 git -m commit " " -> realizamos un commit con un mensaje 
+
 git reset nombre_del_archivo -> asi quitamos del stage 
+
 git commit --amend -m "nuevo mensaje" -> modificar un mensaje mal 
+
 git mv nombre_del_archivo nuevo_nombre_del_archivo ->cambiar el nombre y que git lleve control
+
 git rm nombre_del_archivo -> eliminar un archivo
+
 git reset --soft id_commit -> git hace una marcha hacia el commit 
+
 git reset --hard id_commit -> devolvemos los archivos prsesentes en ese commit
+
 git reflog -> con eso  vemos el historial asi hallamos utilizado reset --hard
+
 git reset --mixed id_commit -> va a un putno de nuestro 
 
 
-*** AHORA USEMOS ESTO QUE VIMOS PARA EMPEZAR ***
-CASO : Digamos que has creado tu proyecto de desde cero, te paras en la ruta raiz de tu proyecto
+## Practica
+**AHORA USEMOS ESTO QUE VIMOS PARA EMPEZAR**
+
+### CASO 1 :
+ Digamos que has creado tu proyecto de desde cero, te paras en la ruta raiz de tu proyecto
 y abres una terminal en este sitio, lo primero que tienes que hacer es inicializar el 
 repositorio git con el siguiente comando:
 
@@ -42,7 +57,8 @@ esto agrega la ruta dode subiremos y ahora si lo subimos:
 y listo ahi ya tendrias tu repo en la nube actualizado por primera vez conn lo que tienes en local.
 
 
-CASO2 : digamos que ahora quieres colaborar en un repositorio, vamos a descargar todo el repo con :
+### CASO 2 :
+ digamos que ahora quieres colaborar en un repositorio, vamos a descargar todo el repo con :
 
     git clone <url del repo>
 
@@ -59,46 +75,105 @@ hacemos nuestras modificaciones y es hora de subirlo al repositorio
 
 
 
-
 ## RAMAS
+delete branch
 
-git branch -d branch_name -> delete branch
-git branch nombre_dela_rama -> crea una nueva rama
-git log --oneline --decorate --all --graph -> muestra todo y las ramas que existen
-git checkout nombre_dela_rama -> se mueve a la rama mencionada
-git merge nombre_dela_rama -> esto conecta ramas se tiene que estar parado en la rama a la que quiere que se una nombre_dela_rama
-git branch -d nombre_dela_rama -> elimina la rama nombre_dela_rama
-git checkout -b nombre_dela_rama -> crea una nueva rama nombre_dela_rama y nos dirige a ella
-git reset --hard HEAD~1  -> vuelve al anterior commit
-git reset --soft HEAD~1  -> vuelve al anterior stage
+    git branch -d branch_name 
+
+crea una nueva rama
+
+    git branch nombre_dela_rama 
+
+muestra todo y las ramas que existen
+
+    git log --oneline --decorate --all --graph 
+
+se mueve a la rama mencionada
+
+    git checkout nombre_dela_rama 
+
+esto conecta ramas se tiene que estar parado en la rama a la que quiere que se una nombre_dela_rama
+    
+    git merge nombre_dela_rama
+
+elimina la rama nombre_dela_rama
+
+    git branch -d nombre_dela_rama 
+
+crea una nueva rama nombre_dela_rama y nos dirige a ella
+
+    git checkout -b nombre_dela_rama 
+    
+vuelve al anterior commit
+
+    git reset --hard HEAD~1 
+
+vuelve al anterior stage
+
+    git reset --soft HEAD~1  
 
 
-***MERGE CON CONFLICTOS***
+## MERGE CON CONFLICTOS
 cuando estamos modificando en la misma linea hemos modificado 
 abrimos el archivo borramos los temas en conflicto que aparecen con <<<HEAD >>>>nombre_dela_rama 
-y ponemos el archivo como queremos que quede luego ejecutamos git add . despues git commit -m " mensaje" 
-y quedara unido
+y ponemos el archivo como queremos que quede luego ejecutamos git add . despues git commit -m " mensaje" y quedara unido
 
 
 
-***ETIQUETAS ***
-git tag nombre_etiqueta -> crea una etiqueta que se le coloca a la rama
-git rag -d nombre_etiqueta -> eliminar etiqueta nombre_etiqueta
-git tag -a nombre_etiqueta -m "mensaje" -> v1.0.0 la letra significa version el primer numero la mas alta version el segundo un cambio
-moderado y el tercero un cambio minimo
-git show nombre_etiqueta -> nos muestra los cambios de la rama con esa etiqueta
-git tag -a nombre_etiqueta id_commit -m "mensaje" -> se etiqueta un commit 
+## ETIQUETAS
+crea una etiqueta que se le coloca a la rama
 
-**GIT HUB***
-*ESTO PARA SUBIR DE MI LOCAL AL github**
-git init
-git add README.md 
-git commit -m "first commit"
-git remote add origin link_repo -> agregamos la ruta del repositorio
-git pull origin master -> Actualizamos nuestro repo local con el remote
-git push -u origin master -> subimos nuestras cosas al repositorio
-git config --get remote.origin.url -> Con esto sabemos la url a donde apunta el remote origin
-ssh -T git@github.com -> Tener problemas con la conexino del repo en github
+    git tag nombre_etiqueta
+
+eliminar etiqueta nombre_etiqueta
+
+    git rag -d nombre_etiqueta 
+
+v1.0.0 la letra significa version el primer numero la mas alta version el segundo un cambio moderado y el tercero un cambio minimo
+
+    git tag -a nombre_etiqueta -m "mensaje" 
+
+nos muestra los cambios de la rama con esa etiqueta
+
+    git show nombre_etiqueta
+
+se etiqueta un commit 
+
+    git tag -a nombre_etiqueta id_commit -m "mensaje"
+
+## GIT HUB
+**ESTO PARA SUBIR DE MI LOCAL AL github**
+Inicializamos el repositorio
+
+    git init
+
+Agregamos un archivo readme.MD por buena practica para explicar nuestro proyecto y como correrlo
+
+    git add README.md 
+
+Hacemos nuestro primer punto en la historia del proyecto
+
+    git commit -m "first commit"
+
+Agregamos el repositorio remoto donde vamos a almacenar todos los cambios
+
+    git remote add origin link_repo 
+
+Actualizamos nuestro repo local con el remote
+
+    git pull origin master 
+
+subimos nuestras cosas al repositorio
+
+    git push -u origin master 
+
+Con esto sabemos la url a donde apunta el remote origin
+
+    git config --get remote.origin.url 
+
+Checar si tenemos problemas con la conexion al repo en github
+
+    ssh -T git@github.com 
 
 
 

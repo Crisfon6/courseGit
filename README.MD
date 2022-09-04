@@ -27,17 +27,43 @@ cambiar el nombre y que git lleve control
 
     git mv nombre_del_archivo nuevo_nombre_del_archivo 
 
-eliminar un archivo
+Este comando nos ayuda a eliminar archivos de Git sin eliminar su historial del sistema de versiones. Esto quiere decir que si necesitamos recuperar el archivo solo debemos “viajar en el tiempo” y recuperar el último commit antes de borrar el archivo en cuestión.
 
     git rm nombre_del_archivo 
 
-git hace una marcha hacia el commit 
+ Elimina los archivos de nuestro repositorio local y del área de staging, pero los mantiene en nuestro disco duro. Básicamente le dice a Git que deje de trackear el historial de cambios de estos archivos, por lo que pasaran a un estado untracked.
+
+    git rm --cached nombre_del_archivo
+
+Elimina los archivos de Git y del disco duro. 
+
+    git rm --force nombre_del_archivo
+
+### git reset 
+Este comando nos ayuda a volver en el tiempo. Pero no como git checkout que nos deja ir, mirar, pasear y volver. Con git reset volvemos al pasado sin la posibilidad de volver al futuro. Borramos la historia y la debemos sobreescribir. No hay vuelta atrás.
+
+Hay dos formas de utilizar git reset: con el argumento --hard, borrando toda la información que tengamos en el área de staging (y perdiendo todo para siempre). O, un poco más seguro, con el argumento --soft, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
+
+ Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.
+
+    git reset --soft
+
+Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
+
+    git reset --hard
+
+git hace una marcha hacia el commit,
 
     git reset --soft id_commit 
 
-devolvemos los archivos prsesentes en ese commit
+devolvemos los archivos prsesentes en ese commit **CUIDADO: esto hace que todo lo que hubieras hecho antes de hacer el reset desaparezca**
+
 
     git reset --hard id_commit 
+
+ Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+
+    git reset HEAD
 
 con eso  vemos el historial asi hallamos utilizado reset --hard
 
@@ -47,7 +73,13 @@ va a un putno de nuestro
 
     git reset --mixed id_commit 
 
+muestra los cambios especificos que se hicieron en este commit 
 
+    git log --stat
+
+para ver los cambios un anterior version de un archivos usar: 
+
+    git checkout id_commit <nombre del archivo(opcional )>
 ## Practica
 **AHORA USEMOS ESTO QUE VIMOS PARA EMPEZAR**
 

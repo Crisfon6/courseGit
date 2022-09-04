@@ -1,27 +1,51 @@
 ## Comandos basicos
-git init  ->inicializar un repositorio
+inicializar un repositorio
 
-git status ->muestra los cambios realizados 
+    git init 
 
-git diff  -> podemos ver que ha sido modificado
+muestra los cambios realizados 
 
-git -m commit " " -> realizamos un commit con un mensaje 
+    git status
 
-git reset nombre_del_archivo -> asi quitamos del stage 
+podemos ver que ha sido modificado
 
-git commit --amend -m "nuevo mensaje" -> modificar un mensaje mal 
+    git diff
 
-git mv nombre_del_archivo nuevo_nombre_del_archivo ->cambiar el nombre y que git lleve control
+realizamos un commit con un mensaje 
 
-git rm nombre_del_archivo -> eliminar un archivo
+    git -m commit " " 
 
-git reset --soft id_commit -> git hace una marcha hacia el commit 
+asi quitamos del stage 
 
-git reset --hard id_commit -> devolvemos los archivos prsesentes en ese commit
+    git reset nombre_del_archivo 
 
-git reflog -> con eso  vemos el historial asi hallamos utilizado reset --hard
+modificar un mensaje mal 
 
-git reset --mixed id_commit -> va a un putno de nuestro 
+    git commit --amend -m "nuevo mensaje" 
+
+cambiar el nombre y que git lleve control
+
+    git mv nombre_del_archivo nuevo_nombre_del_archivo 
+
+eliminar un archivo
+
+    git rm nombre_del_archivo 
+
+git hace una marcha hacia el commit 
+
+    git reset --soft id_commit 
+
+devolvemos los archivos prsesentes en ese commit
+
+    git reset --hard id_commit 
+
+con eso  vemos el historial asi hallamos utilizado reset --hard
+
+    git reflog 
+
+va a un putno de nuestro 
+
+    git reset --mixed id_commit 
 
 
 ## Practica

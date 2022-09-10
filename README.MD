@@ -129,6 +129,7 @@ hacemos nuestras modificaciones y es hora de subirlo al repositorio
     git push <nombre que le colocaste al remote> <nombre de la rama>
 
 
+### Caso 3 :
 
 
 ## RAMAS
